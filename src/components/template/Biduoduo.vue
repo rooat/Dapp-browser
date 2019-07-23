@@ -46,6 +46,8 @@
 	padding: 10px;
 	width: 60%;
 	color:rgba(87,43,209,1);
+  outline: 0;
+  border: 0;
 }
 .details{
 	width:42%;

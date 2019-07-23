@@ -1,7 +1,12 @@
 <template>
 	<div class="lunbo">
-      <ul class="headpicul">
+      <ul class="headpicul" v-if="lang == 'zh'">
         <li v-for='(image,index) in img' :key='index' v-show='index==mark'>
+          <img style="width:95%;border-radius: 7px;"  :src='image' @click="openDapp(index)"/>
+        </li>
+      </ul>
+			<ul class="headpicul" v-if="lang != 'zh'">
+        <li v-for='(image,index) in imgen' :key='index' v-show='index==mark'>
           <img style="width:95%;border-radius: 7px;"  :src='image' @click="openDapp(index)"/>
         </li>
       </ul>
@@ -17,12 +22,21 @@
 	  data () {
 	    return {
 	    	mark:0,
-      		img:[
+				lang: '',
+      	img:[
       		'static/images/trade_en.png',
       		'static/images/eash2_en.png',
       		'static/images/etz_cn.png',
       		'static/images/zerodice.png',
-      		'static/images/popular_bar.png']
+      		'static/images/popular_bar.png'
+				],
+				imgen:[
+      		'static/images/trade_en.png',
+      		'static/images/eash2_en.png',
+      		'static/images/etz_cn.png',
+      		'static/images/zerodice.png',
+      		'static/images/popular_bar.png'
+				]
 	    };
 	  },
 	  mounted() {
@@ -32,9 +46,11 @@
 	  },
 	  methods: {
 	  	init:function(){
+				let that = this;
+				that.lang = that.$i18n.locale;
 	  		window.setInterval(()=>{
 	        this.autoPlay()
-	      },3000)
+	      },3000);
 	  	},
 	  	autoPlay() {
 		      this.mark++

@@ -5,7 +5,8 @@
       <li class="moreli" >&nbsp;</li>
     </ul>
   <div class="detaildapp">
-      <img class="popularimg" @click="popular_master_btn" src="static/images/popular_img.png"/>
+      <img v-if="lang == 'zh'" class="popularimg" @click="popular_master_btn" src="static/images/popular_img.png"/>
+      <img v-if="lang != 'zh'" class="popularimg" @click="popular_master_btn" src="static/images/popular_img_en.png"/>
      <!--  <ul class="excellcontent">
         <li>{{$t("message.mall")}}</li>
         <li class="secondtitle">{{$t("message.mallcomment")}}</li>
@@ -24,11 +25,12 @@
 	  },
 	  data () {
 	    return {
-        deving:String
+        deving:String,
+        lang: ''
 	    }
 	  },
 	  mounted() {
-
+      this.states();
 	  },
 	  methods: {
 		     popular_master_btn:function(){
@@ -39,6 +41,10 @@
             trans.$emit("tipsemit",{"name":"NumberOne","link":Links.url.masternode_plan,"state":0});
           }
         },
+        states() {
+          let that = this;
+          that.lang = that.$i18n.locale;
+        }
 	  }
 	}
 </script>
