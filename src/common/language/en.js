@@ -6,6 +6,7 @@ module.exports = {
         zerotrap:"ZeroTrap",
         blockoptions:"BlockOption",
         zerodicelogo:"ZeroDice",
+        phoenix:"Phoenix",
         chaokuang:"SuperMiner",
         nongchang:"Thai Farm",
         other:"Deving",

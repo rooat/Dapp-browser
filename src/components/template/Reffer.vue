@@ -1,21 +1,39 @@
 <template>
-  <div>
+  <div class="refferbox">
+    <div class="reffertable_box">
 	<table class="reffertable">
       <tr>
-        <td><img class="refferpic" :src="zerodicelogo" @click="zerodicelogobtn"/></td>
+        <td><img class="refferpic" :src="phoenix" @click="phoenixbtn"/></td>
         <td><img class="refferpic" :src="zerotrap" @click="zerotrapbtn"/></td>
         <td><img class="refferpic" :src="eash" @click="eashbtn"/></td>
         <td><img class="refferpic" :src="blockoptions" @click="blockoptionsbtn"/></td>
         
       </tr>
       <tr>
-        <td @click="zerodicelogobtn">{{$t("message.zerodicelogo")}}</td>
+        <td @click="phoenixbtn">{{$t("message.phoenix")}}</td>
         <td @click="zerotrapbtn">{{$t("message.zerotrap")}}</td>
         <td @click="eashbtn">{{$t("message.eash")}}</td>
         <td @click="blockoptionsbtn">{{$t("message.blockoptions")}}</td>
         
       </tr>
     </table>
+    <table class="reffertable">
+      <tr>
+        <td><img class="refferpic" :src="zerodicelogo" @click="zerodicelogobtn"/></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+      <tr>
+        <td @click="zerodicelogobtn">{{$t("message.zerodicelogo")}}</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        
+      </tr>
+    </table>
+    </div>
     <div v-show="isshowtoast" class="isshowclass">
       <p>{{$t("message.updating")}}</p>
       <span class="closeclass" @click="closedivbtn">{{$t("message.close")}}</span>
@@ -35,6 +53,7 @@ export default {
       zerotrap:'static/images/zerotrap.png',
       eash:'static/images/eash.png',
       blockoptions:'static/images/blockoptions.png',
+      phoenix:'static/images/phoenix.png',
       zerodicelogo:'static/images/zerodicelogox.png',
       isshowtoast:false
     }
@@ -76,6 +95,14 @@ export default {
         trans.$emit("tipsemit",{"name":"ZeroDice","link":Links.url.zerodicelogo,"state":0});
       }
     },
+    phoenixbtn:function(){
+      let dname = window.localStorage.getItem("Phoenix");
+      if(dname){
+        window.open(Links.url.phoenix,'_self')
+      }else{
+        trans.$emit("tipsemit",{"name":"Phoenix","link":Links.url.phoenix,"state":0});
+      }
+    },
     closedivbtn:function(){
       this.isshowtoast=false
     }
@@ -94,12 +121,19 @@ export default {
   border-radius: 10px;
   line-height: 60px;
 }
+.refferbox{
+  margin: 50px 0;
+}
+.reffertable_box{
+  padding: 15px 0;
+  background: #fdfbfb;
+}
 .reffertable{
   width: 100%;
-  margin:30px 0 50px 0;
+  margin: 0 auto;
   font-size: 28px;
-  background: #fdfbfb;
   border-radius: 10px;
+  padding: 15px 0;
 }
 .reffertable tr td{
   width:25%;
