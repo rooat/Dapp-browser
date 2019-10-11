@@ -10,6 +10,7 @@ module.exports = {
         phoenix:"http://fh768.io",
         friendsfarm:"https://ao.santanets.com/h5/ffbc/1/friendFarm/index.html",
         zerotrap:"http://zerotrap.io",
-        masternode_plan:"http://zd.etznumberone.com"
+        masternode_plan:"http://zd.etznumberone.com",
+        gowin :"http://182.61.160.143"
   }
 }

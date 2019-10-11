@@ -27,7 +27,7 @@
 		<input class="inputdappclass" placeholder="http:// or https://" ref="inputdappurl" type="text"/>&nbsp;
 		<button class="enterclass" @click="enterdapp">{{$t("message.dev15")}}</button>
 	</p>
-	<a href="http://154.91.201.81">试玩 gowin</a>
+	<!-- <a href="http://182.61.160.143">试玩 gowin</a> -->
 	<p class="footers">Copyright 2019 © Dapp-Browser E-mail:support@etherzero.org</p>
 	<!-- <h2>提交Dapp到发现页面</h2> -->
 	<!-- <table class="confirmtable">

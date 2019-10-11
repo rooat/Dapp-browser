@@ -3,31 +3,32 @@
     <div class="reffertable_box">
 	<table class="reffertable">
       <tr>
+        <td><img class="refferpic" :src="gowinlogo" @click="gowinlogobtn"/></td>
         <td><img class="refferpic" :src="phoenix" @click="phoenixbtn"/></td>
         <td><img class="refferpic" :src="zerotrap" @click="zerotrapbtn"/></td>
         <td><img class="refferpic" :src="eash" @click="eashbtn"/></td>
-        <td><img class="refferpic" :src="blockoptions" @click="blockoptionsbtn"/></td>
+        
         
       </tr>
       <tr>
+        <td @click="gowinlogobtn">{{$t("message.gowinlogobtn")}}</td>
         <td @click="phoenixbtn">{{$t("message.phoenix")}}</td>
         <td @click="zerotrapbtn">{{$t("message.zerotrap")}}</td>
         <td @click="eashbtn">{{$t("message.eash")}}</td>
-        <td @click="blockoptionsbtn">{{$t("message.blockoptions")}}</td>
         
       </tr>
     </table>
     <table class="reffertable">
       <tr>
         <td><img class="refferpic" :src="zerodicelogo" @click="zerodicelogobtn"/></td>
-        <td></td>
+        <td><img class="refferpic" :src="blockoptions" @click="blockoptionsbtn"/></td>
         <td></td>
         <td></td>
         
       </tr>
       <tr>
         <td @click="zerodicelogobtn">{{$t("message.zerodicelogo")}}</td>
-        <td></td>
+        <td @click="blockoptionsbtn">{{$t("message.blockoptions")}}</td>
         <td></td>
         <td></td>
         
@@ -55,6 +56,7 @@ export default {
       blockoptions:'static/images/blockoptions.png',
       phoenix:'static/images/phoenix.png',
       zerodicelogo:'static/images/zerodicelogox.png',
+      gowinlogo :'static/images/gowin.png',
       isshowtoast:false
     }
   },
@@ -101,6 +103,14 @@ export default {
         window.open(Links.url.phoenix,'_self')
       }else{
         trans.$emit("tipsemit",{"name":"Phoenix","link":Links.url.phoenix,"state":0});
+      }
+    },
+    gowinlogobtn:function(){
+      let dname = window.localStorage.getItem("gowin");
+      if(dname){
+        window.open(Links.url.gowin,'_self')
+      }else{
+        trans.$emit("tipsemit",{"name":"gowin","link":Links.url.gowin,"state":0});
       }
     },
     closedivbtn:function(){

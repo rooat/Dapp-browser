@@ -6,6 +6,7 @@ module.exports = {
         zerotrap:"ZeroTrap",
         blockoptions:"猜涨跌",
         zerodicelogo:"ZeroDice",
+        gowinlogobtn:"Gowin",
         phoenix:"凤凰传奇",
         chaokuang:"超矿",
         nongchang:"以泰农场",
