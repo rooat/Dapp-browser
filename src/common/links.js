@@ -11,6 +11,9 @@ module.exports = {
         friendsfarm:"https://ao.santanets.com/h5/ffbc/1/friendFarm/index.html",
         zerotrap:"http://zerotrap.io",
         masternode_plan:"http://zd.etznumberone.com",
-        gowin :"http://182.61.160.143"
+        gowin :"http://www.gowindapp.com",
+        gowin_plus :"http://182.61.108.243:8888",
+        Boxes:"http://boxes.carota.tech",
+        phoenix_sec:"http://fh2.fh768.io"
   }
 }

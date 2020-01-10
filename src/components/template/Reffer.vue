@@ -3,32 +3,33 @@
     <div class="reffertable_box">
 	<table class="reffertable">
       <tr>
-        <td><img class="refferpic" :src="gowinlogo" @click="gowinlogobtn"/></td>
-        <td><img class="refferpic" :src="phoenix" @click="phoenixbtn"/></td>
+        <td><img class="refferpic" :src="phoenix_sec" @click="phoenix_secbtn"/></td> 
         <td><img class="refferpic" :src="zerotrap" @click="zerotrapbtn"/></td>
         <td><img class="refferpic" :src="eash" @click="eashbtn"/></td>
-        
+        <td><img class="refferpic" :src="zerodicelogo" @click="zerodicelogobtn"/></td> 
         
       </tr>
       <tr>
-        <td @click="gowinlogobtn">{{$t("message.gowinlogobtn")}}</td>
-        <td @click="phoenixbtn">{{$t("message.phoenix")}}</td>
+        <td @click="phoenix_secbtn">{{$t("message.phoenix_sec")}}</td> 
         <td @click="zerotrapbtn">{{$t("message.zerotrap")}}</td>
         <td @click="eashbtn">{{$t("message.eash")}}</td>
+        <td @click="zerodicelogobtn">{{$t("message.zerodicelogo")}}</td>
         
       </tr>
     </table>
     <table class="reffertable">
       <tr>
-        <td><img class="refferpic" :src="zerodicelogo" @click="zerodicelogobtn"/></td>
         <td><img class="refferpic" :src="blockoptions" @click="blockoptionsbtn"/></td>
+        <td><img class="refferpic" :src="Boxes" @click="Boxesbtn"/></td>
+         <!-- <td><img class="refferpic" :src="phoenix" @click="phoenixbtn"/></td> -->
         <td></td>
         <td></td>
         
       </tr>
       <tr>
-        <td @click="zerodicelogobtn">{{$t("message.zerodicelogo")}}</td>
         <td @click="blockoptionsbtn">{{$t("message.blockoptions")}}</td>
+        <td @click="Boxesbtn">{{$t("message.Boxes")}}</td>
+        <!-- <td @click="phoenixbtn">{{$t("message.phoenix")}}</td> -->
         <td></td>
         <td></td>
         
@@ -57,6 +58,9 @@ export default {
       phoenix:'static/images/phoenix.png',
       zerodicelogo:'static/images/zerodicelogox.png',
       gowinlogo :'static/images/gowin.png',
+      gowinpluslogo:'static/images/gowin_plus.png',
+      Boxes :'static/images/Boxes.png',
+      phoenix_sec:'static/images/phoenix_sec.png',
       isshowtoast:false
     }
   },
@@ -89,6 +93,14 @@ export default {
         trans.$emit("tipsemit",{"name":"Blockoptions","link":Links.url.blockoptions,"state":0});
       }
     },
+    Boxesbtn:function(){
+      let dname = window.localStorage.getItem("Boxes");
+      if(dname){
+        window.open(Links.url.Boxes,'_self')
+      }else{
+        trans.$emit("tipsemit",{"name":"Boxes","link":Links.url.Boxes,"state":0});
+      }
+    },
     zerodicelogobtn:function(){
       let dname = window.localStorage.getItem("Zerodicelogo");
       if(dname){
@@ -105,12 +117,28 @@ export default {
         trans.$emit("tipsemit",{"name":"Phoenix","link":Links.url.phoenix,"state":0});
       }
     },
+    phoenix_secbtn:function(){
+      let dname = window.localStorage.getItem("Phoenix2.0");
+      if(dname){
+        window.open(Links.url.phoenix_sec,'_self')
+      }else{
+        trans.$emit("tipsemit",{"name":"Phoenix2.0","link":Links.url.phoenix_sec,"state":0});
+      }
+    },
     gowinlogobtn:function(){
       let dname = window.localStorage.getItem("gowin");
       if(dname){
         window.open(Links.url.gowin,'_self')
       }else{
         trans.$emit("tipsemit",{"name":"gowin","link":Links.url.gowin,"state":0});
+      }
+    },
+    gowinplusbtn:function(){
+      let dname = window.localStorage.getItem("TreasureBasin");
+      if(dname){
+        window.open(Links.url.gowin_plus,'_self')
+      }else{
+        trans.$emit("tipsemit",{"name":"TreasureBasin","link":Links.url.gowin_plus,"state":0});
       }
     },
     closedivbtn:function(){
