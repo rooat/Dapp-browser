@@ -154,7 +154,7 @@ export default {
 }
 .ceng{
   width: 100%;
-  height: 1850px;
+  height: 2400px;
   background: black;
   position: absolute;
   top:0;

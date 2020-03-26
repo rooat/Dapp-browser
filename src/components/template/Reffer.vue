@@ -20,17 +20,17 @@
     <table class="reffertable">
       <tr>
         <td><img class="refferpic" :src="blockoptions" @click="blockoptionsbtn"/></td>
+        <td><img class="refferpic" :src="shengcaiyoudao" @click="shengcaiyoudaobtn"/></td>
         <td><img class="refferpic" :src="Boxes" @click="Boxesbtn"/></td>
          <!-- <td><img class="refferpic" :src="phoenix" @click="phoenixbtn"/></td> -->
-        <td></td>
         <td></td>
         
       </tr>
       <tr>
         <td @click="blockoptionsbtn">{{$t("message.blockoptions")}}</td>
+        <td @click="shengcaiyoudaobtn">{{$t("message.shengcaiyoudao")}}</td>
         <td @click="Boxesbtn">{{$t("message.Boxes")}}</td>
         <!-- <td @click="phoenixbtn">{{$t("message.phoenix")}}</td> -->
-        <td></td>
         <td></td>
         
       </tr>
@@ -61,6 +61,7 @@ export default {
       gowinpluslogo:'static/images/gowin_plus.png',
       Boxes :'static/images/Boxes.png',
       phoenix_sec:'static/images/phoenix_sec.png',
+      shengcaiyoudao:'static/images/shengcaiyoudao.png',
       isshowtoast:false
     }
   },
@@ -139,6 +140,14 @@ export default {
         window.open(Links.url.gowin_plus,'_self')
       }else{
         trans.$emit("tipsemit",{"name":"TreasureBasin","link":Links.url.gowin_plus,"state":0});
+      }
+    },
+    shengcaiyoudaobtn:function(){
+      let dname = window.localStorage.getItem("升财有道");
+      if(dname){
+        window.open(Links.url.shengcaiyoudao,'_self')
+      }else{
+        trans.$emit("tipsemit",{"name":"升财有道","link":Links.url.shengcaiyoudao,"state":0});
       }
     },
     closedivbtn:function(){

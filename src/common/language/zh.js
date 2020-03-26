@@ -8,6 +8,7 @@ module.exports = {
         zerodicelogo:"ZeroDice",
         gowinlogobtn:"Gowin",
         gowinplus:"聚宝盆",
+        shengcaiyoudao:"升财有道",
         phoenix:"凤凰传奇",
         phoenix_sec:"凤凰2.0",
         Boxes:"Boxes",

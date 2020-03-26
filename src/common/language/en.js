@@ -4,6 +4,7 @@ module.exports = {
         eash :"EASH",
         ruizhi:"BULL",
         zerotrap:"ZeroTrap",
+        shengcaiyoudao:"升财有道",
         blockoptions:"BlockOption",
         zerodicelogo:"ZeroDice",
         gowinlogobtn:"Gowin",

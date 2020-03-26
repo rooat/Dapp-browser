@@ -5,6 +5,9 @@
       <li class="moreli" >&nbsp;</li>
     </ul>
   <div class="detaildapp">
+      <img v-if="lang == 'zh'" class="popularimg" @click="staking_btn" src="static/images/stakingbtn_zh.png"/>
+      <img v-if="lang != 'zh'" class="popularimg" @click="staking_btn" src="static/images/stakingbtn_en.png"/>
+      
       <img v-if="lang == 'zh'" class="popularimg" @click="popular_master_btn" src="static/images/popular_img.png"/>
       <img v-if="lang != 'zh'" class="popularimg" @click="popular_master_btn" src="static/images/popular_img_en.png"/>
      <!--  <ul class="excellcontent">
@@ -41,6 +44,9 @@
             trans.$emit("tipsemit",{"name":"NumberOne","link":Links.url.masternode_plan,"state":0});
           }
         },
+        staking_btn:function(){
+          window.open(Links.url.staking,'_self')
+        },
         states() {
           let that = this;
           let lang = navigator.language || navigator.userLanguage;//常规浏览器语言和IE浏览器
@@ -55,7 +61,7 @@
 .excelentdiv{
   margin-left: 20px;
   margin-right:20px;
-  height: 300px;
+  /* height: 550px; */
 }
 .secondtitle{
 	color:rgba(153,172,187,1);
@@ -79,7 +85,6 @@
 .detaildapp{
   clear:both;
   padding-top:20px;
-  height: 120px;
 }
 .popularimg{
   width: 100%

@@ -14,6 +14,8 @@ module.exports = {
         gowin :"http://www.gowindapp.com",
         gowin_plus :"http://182.61.108.243:8888",
         Boxes:"http://boxes.carota.tech",
-        phoenix_sec:"http://fh2.fh768.io"
+        phoenix_sec:"http://fh2.fh768.io",
+        staking:"http://staking.fh768.io",
+        shengcaiyoudao:"http://shengcai.fh768.io"
   }
 }
